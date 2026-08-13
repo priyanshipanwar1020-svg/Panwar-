@@ -1,0 +1,5 @@
+body{font-family:Arial;background:#f0f0f0}
+.card{background:white;max-width:600px;margin:40px auto;padding:20px;border-radius:8px}
+input{padding:8px;width:90%}
+button{padding:8px 12px;margin-top:5px}
+#chatBox{height:250px;overflow:auto;border:1px solid #ccc;padding:10px;margin-bottom:10px}
