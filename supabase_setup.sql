@@ -1,0 +1,1 @@
+create table messages (id bigint generated always as identity primary key,sender text not null,text text not null,created_at timestamptz default now()); alter table messages enable row level security; create policy "allow everyone" on messages for all using (true) with check (true);
