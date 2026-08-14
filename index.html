@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeonTalk - Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+  <main class="login-shell">
+    <section class="login-panel brand-panel">
+      <div class="brand-badge">•••</div>
+      <div class="brand-name">Neon<span>Talk</span></div>
+      <p class="brand-tagline">Group chats. Real connections.</p>
+      <div class="brand-orb orb-one"></div>
+      <div class="brand-orb orb-two"></div>
+    </section>
+
+    <section class="login-panel form-panel">
+      <div class="mobile-brand">Neon<span>Talk</span></div>
+      <h1>Welcome back</h1>
+      <p class="subheading">Sign in to continue your conversations.</p>
+
+      <form class="login-form" onsubmit="event.preventDefault(); login();">
+        <label for="userid">User ID</label>
+        <div class="input-wrap">
+          <span class="input-icon">◉</span>
+          <input id="userid" autocomplete="username" placeholder="Enter your ID" required>
+        </div>
+
+        <label for="password">Password</label>
+        <div class="input-wrap">
+          <span class="input-icon">▣</span>
+          <input id="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+          <button class="eye-button" type="button" onclick="togglePassword()" aria-label="Show password">◉</button>
+        </div>
+
+        <div class="login-options">
+          <label class="remember"><input type="checkbox" id="remember"> <span>Remember me</span></label>
+          <span class="muted-link">Forgot password?</span>
+        </div>
+
+        <button class="primary-button" type="submit">Log In <span>→</span></button>
+        <p id="msg" class="error-message" aria-live="polite"></p>
+
+        <div class="divider"><span>or</span></div>
+
+        <button class="secondary-button" type="button" disabled>G Continue with Google</button>
+        <p class="signup-text">Prototype access is limited to 4 predefined users.</p>
+      </form>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
