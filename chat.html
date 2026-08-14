@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeonTalk - Chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="chat-page">
+  <main class="chat-app">
+    <aside class="nav-rail">
+      <div class="nav-logo">N<span>T</span></div>
+      <div class="nav-items">
+        <button class="nav-icon active" title="Chats">◉</button>
+        <button class="nav-icon" title="Users" disabled>♧</button>
+        <button class="nav-icon" title="Settings" disabled>⚙</button>
+      </div>
+      <div id="userAvatar" class="avatar user-avatar" title="Current user">?</div>
+    </aside>
+
+    <aside class="chat-sidebar">
+      <div class="sidebar-head">
+        <div>
+          <div class="brand-name small">Neon<span>Talk</span></div>
+          <div class="section-title">Chats</div>
+        </div>
+        <button class="round-button" title="New chat" disabled>+</button>
+      </div>
+
+      <div class="search-box">
+        <span>⌕</span>
+        <input id="searchChats" placeholder="Search chats..." oninput="filterUsers()">
+      </div>
+
+      <div id="chatUsers" class="chat-users"></div>
+
+      <div class="sidebar-note">
+        <span class="status-dot"></span>
+        <div>
+          <strong>Cloud chat</strong>
+          <small>Supabase connected</small>
+        </div>
+      </div>
+    </aside>
+
+    <section class="conversation">
+      <header class="conversation-head">
+        <div class="conversation-title">
+          <div id="roomAvatar" class="avatar room-avatar">NT</div>
+          <div>
+            <h2>Campus Chat</h2>
+            <p><span class="status-dot"></span> 4 members</p>
+          </div>
+        </div>
+        <div class="conversation-actions">
+          <button title="Search" disabled>⌕</button>
+          <button title="Call" disabled>◡</button>
+          <button title="Info" disabled>ⓘ</button>
+          <button class="logout-button" onclick="logout()" title="Logout">↪</button>
+        </div>
+      </header>
+
+      <div class="chat-body">
+        <div class="day-pill">Today</div>
+        <div id="chatBox" class="messages" aria-live="polite"></div>
+      </div>
+
+      <footer class="composer">
+        <button class="attach-button" type="button" disabled title="Attachments">⌕</button>
+        <input id="message" autocomplete="off" placeholder="Type a message..." onkeydown="handleMessageKey(event)">
+        <button class="emoji-button" type="button" disabled title="Emoji">☺</button>
+        <button class="send-button" onclick="sendMessage()" title="Send">➤</button>
+      </footer>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+  <script>initChatPage();</script>
+</body>
+</html>
